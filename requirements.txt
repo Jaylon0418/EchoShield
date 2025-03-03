@@ -1,0 +1,6 @@
+pynput
+pygetwindow
+pyautogui
+pyperclip
+openai
+PyQt6
