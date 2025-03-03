@@ -120,7 +120,7 @@ class FloatingChatWindow(QWidget):
     def start_thinking_animation(self):
         """启动 '思考中...' 并确保 UI 立即更新"""
         self.thinking_state = 0
-        self.update_thinking_text()  # **立即更新一次**
+        self.update_thinking_text() 
         self.thinking_timer.timeout.connect(self.update_thinking_text)
         self.thinking_timer.start(500)  
 
@@ -129,7 +129,7 @@ class FloatingChatWindow(QWidget):
         thinking_states = ["思考中.", "思考中..", "思考中..."]
         self.chat_display.setText(thinking_states[self.thinking_state])
         self.thinking_state = (self.thinking_state + 1) % 3  
-        QApplication.processEvents()  # **强制刷新 UI**
+        QApplication.processEvents()
 
     def stop_thinking_animation(self):
         """停止 '思考中...' 动画"""
