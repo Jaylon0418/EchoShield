@@ -1,12 +1,12 @@
 import os
 from volcenginesdkarkruntime import Ark
 
-# 获取 API Key
+
 API_KEY = os.environ.get("ARK_API_KEY")
 if not API_KEY:
     raise ValueError("Error: 环境变量 ARK_API_KEY 未设置，请检查 API 密钥")
 
-# 初始化 Ark 客户端
+
 client = Ark(api_key=API_KEY)
 
 def get_ai_response(user_text):
@@ -56,10 +56,10 @@ def get_ai_response(user_text):
                 {"role": "system", "content": "你是豆包，是由字节跳动开发的 AI 人工智能助手"},
                 {"role": "user", "content": prompt}  
             ],
-            stream=False  # 不使用流式返回
+            stream=False 
         )
         
-        # **检查 AI 响应是否为空**
+        
         if response.choices and response.choices[0].message.content:
             return response.choices[0].message.content
         else:
@@ -69,7 +69,7 @@ def get_ai_response(user_text):
         print(f"API 调用失败: {e}")
         return "！检测到暴力元素！：AI 处理失败，请稍后再试。\n这样说或许会更友好：请耐心表达，我们愿意倾听。"
 
-# **测试代码**
+
 if __name__ == "__main__":
     test_text = "你这个人怎么这么坏呢，懒得喷你我都。"
     print("用户输入:", test_text)
