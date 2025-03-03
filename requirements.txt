@@ -1,6 +1,16 @@
-pynput
-pygetwindow
+# GUI 相关
+PyQt5
+
+# AI & DBAI SDK
+volcenginesdkarkruntime
+
+# 屏幕 OCR 相关
+pytesseract
+opencv-python
+pillow
+
+# 自动化 & 系统操作
 pyautogui
+pygetwindow
 pyperclip
-openai
-PyQt6
+pynput
